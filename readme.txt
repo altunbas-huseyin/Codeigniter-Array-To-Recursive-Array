@@ -11,7 +11,7 @@ recursive_ul_li($result);
                 foreach ( $tree as $item ) {
                     echo "<li id=\"$item[id]\" parent_id=\"$item[ust_id]\" > $item[aciklama] </li>";
                     if ( isset( $item['children'] ) ) {
-                        olLiTree( $item['children'] );
+                        recursive_ul_li( $item['children'] );
                     }
                 }
                 echo '</ul>';
