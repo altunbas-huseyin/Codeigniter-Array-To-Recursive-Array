@@ -4,6 +4,23 @@ $result = $this->recursive_array_lib->recursive($arr,'ust_id','id',$ust_id);
 $arr içeriği aşağıdaki gibidir.
 $result örnek çıktısı en alttadır.
 
+Şu şekilde menu çıktısı oluşturulabilir;
+recursive_ul_li($result);
+ function recursive_ul_li( $tree ) {
+                echo '<ul>';
+                foreach ( $tree as $item ) {
+                    echo "<li id=\"$item[id]\" parent_id=\"$item[ust_id]\" > $item[aciklama] </li>";
+                    if ( isset( $item['children'] ) ) {
+                        olLiTree( $item['children'] );
+                    }
+                }
+                echo '</ul>';
+            }
+
+
+
+
+
 Array
 (
     [0] => Array
